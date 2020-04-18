@@ -12,24 +12,18 @@
 	</head>
 	<body>
 
-		<!-- Camera -->
-		<main id="camera">
-
-		    <!-- Camera sensor -->
-		    <canvas id="camera--sensor"></canvas>
-		    
-		    <!-- Camera view -->
-		    <video id="camera--view" autoplay playsinline></video>
-		    
-		    <!-- Camera output -->
-		    <img src="//:0" alt="" id="camera--output">
-
-		    <!-- Camera trigger -->
-		    <button id="camera--trigger">Take a picture</button>
-
-		</main>
-
-		<!-- Reference to your JavaScript file -->
-		<script src="app.js"></script> 
+		<form enctype="multipart/form-data" method="post">
+  <h2>Regular file upload</h2>
+  <input type="file"></input>
+  
+  <h2>capture=camera</h2>
+  <input type="file" accept="image/*;capture=camera"></input>
+  
+  <h2>capture=camcorder</h2>
+  <input type="file" accept="video/*;capture=camcorder"></input>
+  
+  <h2>capture=microphone</h2>
+  <input type="file" accept="audio/*;capture=microphone"></input>
+</form>
 	</body>
 </html>
