@@ -31,11 +31,13 @@ function gotDevices(mediaDevices) {
       }
 
 function cameraStart() {
+	
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
             track = stream.getTracks()[0];
             cameraView.srcObject = stream;
+	    document.getElementById("p1").innerHTML = "cam start";
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
@@ -65,6 +67,7 @@ function myfun(){
     video: videoConstraints,
     audio: false
   };
+	
   navigator.mediaDevices
     .getUserMedia(constraints)
     .then(function(stream) {
