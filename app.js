@@ -8,6 +8,29 @@ const cameraView = document.querySelector("#camera--view"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger");
 
+function cameraStart_ing() {
+        cameraStart() ;
+	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+        }
+
+function gotDevices(mediaDevices) {
+		//alert(mediaDevices);
+    //  select.innerHTML = 'select camera';
+      // select.appendChild(document.createElement('option'));
+        let count = 1;
+		
+       mediaDevices.forEach(mediaDevice => {
+    if (mediaDevice.kind === 'videoinput') {
+      const option = document.createElement('option');
+      option.value = mediaDevice.deviceId;
+      const label = mediaDevice.label || `Camera ${count++}`;
+      const textNode = document.createTextNode(label);
+      option.appendChild(textNode);
+      select.appendChild(option);
+    }
+  });
+      }
+
 // Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
@@ -33,7 +56,7 @@ cameraTrigger.onclick = function() {
 
 // Start the video stream when the window loads
 
-window.addEventListener("load", cameraStart, false);
+window.addEventListener("load", cameraStart_ing, false);
 
 
 
