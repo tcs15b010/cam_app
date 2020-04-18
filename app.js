@@ -38,6 +38,7 @@ function gotDevices(mediaDevices) {
 
 // Access the device camera and stream to cameraView
 function cameraStart() {
+	alert('Hi');
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
