@@ -1,5 +1,5 @@
-if('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices){
-  console.log("Let's get this party started") ;
+//if('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices){
+  //console.log("Let's get this party started") ;
 
 // Set constraints for the video stream
 const select = document.getElementById('select');
@@ -88,6 +88,6 @@ cameraTrigger.onclick = function() {
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart_ing, false);
-}
-else
-	alert('Oops cam no acc') ;
+//}
+//else
+//	alert('Oops cam no acc') ;
