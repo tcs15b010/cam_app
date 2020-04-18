@@ -46,6 +46,7 @@ function cameraStart() {
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
+	    alert('No video streaming_use prev img capture');
         });
 }
 
