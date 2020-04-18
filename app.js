@@ -56,6 +56,7 @@ function cameraStart_ing() {
 		document.getElementById("p1").innerHTML = "funti";
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 		if (navigator.getUserMedia) {
+			document.getElementById("p1").innerHTML = "su";
     				navigator.getUserMedia({ video: false, audio: true }, onSuccess, onError);
 				document.getElementById("p1").innerHTML = "s";
 			} 
