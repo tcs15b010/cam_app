@@ -31,7 +31,7 @@ function gotDevices(mediaDevices) {
       }
 
 function cameraStart() {
-	
+	document.getElementById("p1").innerHTML = "cam start fun()";
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
