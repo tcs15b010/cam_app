@@ -9,11 +9,7 @@ const cameraView = document.querySelector("#camera--view"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger");
 
-function cameraStart_ing() {
-        cameraStart() ;
-	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
-       }
- function gotDevices(mediaDevices) {
+function gotDevices(mediaDevices) {
 		//alert(mediaDevices);
     //  select.innerHTML = 'select camera';
       // select.appendChild(document.createElement('option'));
@@ -31,6 +27,12 @@ function cameraStart_ing() {
     }
   });
       }
+
+function cameraStart_ing() {
+        cameraStart() ;
+	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+       }
+ 
 
 // Access the device camera and stream to cameraView
 function cameraStart() {
