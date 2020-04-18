@@ -54,15 +54,29 @@ function cameraStart_ing() {
  function funti()
 	{
 		document.getElementById("p1").innerHTML = "funti";
-		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-		if (navigator.getUserMedia) {
-			document.getElementById("p1").innerHTML = "su";
-    				navigator.getUserMedia({ video: false, audio: true }, onSuccess, onError);
-				document.getElementById("p1").innerHTML = "s";
-			} 
-		else {
-    				document.getElementById("p1").innerHTML = "f";		
-				}
+		if (!("mediaDevices" in navigator)) {
+    navigator.mediaDevices = {};
+			document.getElementById("p1").innerHTML = "no media devices";
+			
+  }
+
+  if (!("getUserMedia" in navigator.mediaDevices)) {
+	  document.getElementById("p1").innerHTML = "gey user mediap1";
+    navigator.mediaDevices.getUserMedia = constraints => {
+      const getUserMedia =
+        navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+      if (!getUserMedia) {
+	      	  document.getElementById("p1").innerHTML = "gey user mediap2";
+        return Promise.reject(new Error("getUserMedia is not supported"));
+      } else {
+	      	  document.getElementById("p1").innerHTML = "gey user mediap3";
+        return new Promise((resolve, reject) =>
+          getUserMedia.call(navigator, constraints, resolve, reject)
+        );
+      }
+    };
+  }
 	}
 
 // Access the device camera and stream to cameraView
