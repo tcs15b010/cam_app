@@ -39,6 +39,7 @@ function cameraStart() {
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
+	    document.getElementById("p1").innerHTML = "cam no access";
         });
 }
 
