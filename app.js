@@ -38,7 +38,6 @@ function gotDevices(mediaDevices) {
 
 // Access the device camera and stream to cameraView
 function cameraStart() {
-	alert('Hi');
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
@@ -46,7 +45,6 @@ function cameraStart() {
             cameraView.srcObject = stream;
         })
         .catch(function(error) {
-	    alert(error);
             console.error("Oops. Something is broken.", error);
 	    alert('No video streaming_use prev img capture');
         });
