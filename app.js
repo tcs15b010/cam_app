@@ -31,14 +31,7 @@ const cameraView = document.querySelector("#camera--view"),
     }
   });
       }
-    
-    function cameraStart_ing() {
-        cameraStart() ;
-	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
-        
 
-    }
-    // Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
@@ -51,6 +44,17 @@ function cameraStart() {
 			alert('please use prev method for img cap');
         });
 }
+    
+
+
+function cameraStart_ing() {
+        cameraStart() ;
+	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+        
+
+    }
+    // Access the device camera and stream to cameraView
+
 
 function myfun(){
  track.stop();
