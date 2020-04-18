@@ -44,6 +44,7 @@ function cameraStart() {
 }
 
 function cameraStart_ing() {
+	document.getElementById("p1").innerHTML = "you r in";
         cameraStart() ;
 	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
        }
