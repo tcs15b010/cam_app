@@ -1,3 +1,6 @@
+if('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices){
+  console.log("Let's get this party started") ;
+	
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 var track = null;
@@ -84,5 +87,8 @@ cameraTrigger.onclick = function() {
 
 window.addEventListener("load", cameraStart_ing, false);
 
+}
+else
+	alert('Camera not accessible to browser') ;
 
 
