@@ -28,13 +28,6 @@ function gotDevices(mediaDevices) {
   });
       }
 
-function cameraStart_ing() {
-        cameraStart() ;
-	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
-       }
- 
-
-// Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
@@ -46,6 +39,15 @@ function cameraStart() {
             console.error("Oops. Something is broken.", error);
         });
 }
+
+function cameraStart_ing() {
+        cameraStart() ;
+	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+       }
+ 
+
+// Access the device camera and stream to cameraView
+
 
 function myfun(){
  track.stop();
