@@ -33,8 +33,9 @@ const cameraView = document.querySelector("#camera--view"),
       }
     
     function cameraStart_ing() {
-        navigator.mediaDevices.enumerateDevices().then(gotDevices);
         cameraStart() ;
+	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+        
 
     }
     // Access the device camera and stream to cameraView
