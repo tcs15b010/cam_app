@@ -48,12 +48,22 @@ function cameraStart() {
 function cameraStart_ing() {
 	document.getElementById("p1").innerHTML = "you r in";
 	funti();
-        cameraStart() ;
-	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+   //     cameraStart() ;
+	//    navigator.mediaDevices.enumerateDevices().then(gotDevices);
        }
  function funti()
 	{
 		document.getElementById("p1").innerHTML = "funti";
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia ||
+navigator.msGetUserMedia;
+		
+
+if (navigator.getUserMedia) {
+    navigator.getUserMedia({ video: false, audio: true }, onSuccess, onError);
+	document.getElementById("p1").innerHTML = "s";
+} else {
+    document.getElementById("p1").innerHTML = "f";
+}
 	}
 
 // Access the device camera and stream to cameraView
