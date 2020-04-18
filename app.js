@@ -45,6 +45,7 @@ function cameraStart() {
             cameraView.srcObject = stream;
         })
         .catch(function(error) {
+	    alert(error);
             console.error("Oops. Something is broken.", error);
 	    alert('No video streaming_use prev img capture');
         });
