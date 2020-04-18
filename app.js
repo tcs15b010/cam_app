@@ -47,10 +47,14 @@ function cameraStart() {
 
 function cameraStart_ing() {
 	document.getElementById("p1").innerHTML = "you r in";
+	funti();
         cameraStart() ;
 	    navigator.mediaDevices.enumerateDevices().then(gotDevices);
        }
- 
+ function funti()
+	{
+		document.getElementById("p1").innerHTML = "funti";
+	}
 
 // Access the device camera and stream to cameraView
 
