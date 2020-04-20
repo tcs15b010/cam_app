@@ -5,7 +5,7 @@ var constraints = { video: { facingMode: "user" }, audio: false };
 var track = null;
 
 // Define constants
-const selectr = document.getElementById('select');
+const select = document.getElementById('select');
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
@@ -55,10 +55,10 @@ function cameraStart_ing() {
 function myfun(){
  track.stop();
   const videoConstraints = {};
-  if (selectr.value === '') {
+  if (select.value === '') {
     videoConstraints.facingMode = 'user';
   } else {
-    videoConstraints.deviceId = { exact: selectr.value };
+    videoConstraints.deviceId = { exact: select.value };
   }
   const constraints = {
     video: videoConstraints,
