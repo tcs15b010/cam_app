@@ -39,7 +39,7 @@ function cameraStart() {
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
-	    alert(error);
+	    alert('camera not accessible');
         });
 }
 
@@ -72,7 +72,7 @@ function myfun(){
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
-			alert(error);
+			alert('camera not accessible');
         });
 };
 
